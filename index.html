@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="SP Siam Ahmed is a passionate Web Developer & Designer from Bangladesh. Specializing in HTML, CSS, JavaScript, WordPress & SEO. Explore portfolio, projects, and services.">
+    <meta name="keywords" content="SP Siam Ahmed, Web Developer Bangladesh, Web Designer, SEO Expert, WordPress Developer, Portfolio Website, Frontend Developer, HTML CSS JavaScript">
+    <meta property="og:title" content="SP Siam Ahmed | Web Developer & SEO Expert">
+    <meta property="og:description" content="Professional Web Developer & Designer from Bangladesh. Explore portfolio, projects, and digital services.">
+    <meta property="og:image" content="https://spsiamahmed.github.io/portfolio/your-image.jpg">
+    <meta property="og:url" content="https://spsiamahmed.github.io/portfolio/">
+    <meta property="og:type" content="website">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP Siam Ahmed | Web Developer, Designer & SEO Expert from Bangladesh</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2596be;
+            --primary-dark: #1a7396;
+            --black: #000000;
+            --white: #ffffff;
+            --gray: #f8f9fa;
+            --dark-gray: #1a1a1a;
+            --text-gray: #666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--black);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--gray);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            background: var(--white) !important;
+        }
+        
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            color: var(--primary-color) !important;
+            letter-spacing: -1px;
+        }
+        
+        .nav-link {
+            font-weight: 600;
+            color: var(--black) !important;
+            margin: 0 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1rem;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::before, .nav-link.active::before {
+            width: 100%;
+        }
+        
+        /* Home Section */
+        #home {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, var(--dark-gray) 50%, #2c2c2c 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+        }
+        
+        #home::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            opacity: 0.15;
+            top: -300px;
+            right: -300px;
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        #home::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            opacity: 0.1;
+            bottom: -200px;
+            left: -200px;
+            animation: float 15s infinite ease-in-out reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -50px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+        
+        .home-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .home-content .greeting {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: fadeInDown 0.8s ease;
+        }
+        
+        .home-content h1 {
+            font-size: 4.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 900;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .home-content h1 span {
+            background: linear-gradient(135deg, var(--primary-color), #40b5d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .home-content .subtitle {
+            font-size: 1.8rem;
+            color: #aaa;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            animation: fadeInUp 1.2s ease;
+        }
+        
+        .home-content p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            line-height: 1.8;
+            animation: fadeInUp 1.4s ease;
+        }
+        
+        .btn-group {
+            animation: fadeInUp 1.6s ease;
+        }
+        
+        .btn-primary-custom {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 20px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.4s ease;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 10px 30px rgba(37, 150, 190, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-primary-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+        
+        .btn-primary-custom:hover::before {
+            left: 0;
+        }
+        
+        .btn-primary-custom:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 150, 190, 0.4);
+        }
+        
+        .btn-outline-custom {
+            background: transparent;
+            color: var(--white);
+            padding: 20px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.4s ease;
+            border: 2px solid var(--white);
+            margin-left: 20px;
+        }
+        
+        .btn-outline-custom:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+        
+        .social-links-home {
+            margin-top: 40px;
+            animation: fadeInUp 1.8s ease;
+        }
+        
+        .social-links-home a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            border-radius: 50%;
+            line-height: 50px;
+            text-align: center;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-links-home a:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-5px) rotate(360deg);
+        }
+        
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            font-weight: 900;
+        }
+        
+        .section-title h2::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(0, 0, 0, 0.05);
+            z-index: -1;
+            transform: translate(-5px, -5px);
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), transparent);
+        }
+        
+        .section-title p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+        
+        /* About Section */
+        #about {
+            padding: 120px 0;
+            background: var(--white);
+            position: relative;
+        }
+        
+        .about-img {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 3px solid var(--primary-color);
+            border-radius: 20px;
+            z-index: 1;
+        }
+        
+        .about-img img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        
+        .about-content p {
+            line-height: 2;
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+        
+        .info-box {
+            background: var(--gray);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .info-box .row {
+            margin: 0;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+        }
+        
+        .info-item strong {
+            color: var(--black);
+            font-weight: 700;
+            display: inline-block;
+            min-width: 120px;
+        }
+        
+        .info-item span {
+            color: var(--text-gray);
+        }
+        
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .skills-list li {
+            padding: 15px 20px;
+            background: var(--gray);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .skills-list li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skills-list li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Resume Section */
+        #resume {
+            padding: 120px 0;
+            background: var(--gray);
+        }
+        
+        .resume-item {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resume-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(37, 150, 190, 0.05), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .resume-item:hover::before {
+            left: 100%;
+        }
+        
+        .resume-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+        
+        .resume-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+        
+        .resume-item h5 {
+            color: var(--text-gray);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .resume-item h5 i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        .resume-item p {
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+        
+        /* Skills Progress */
+        .skill-item {
+            margin-bottom: 35px;
+        }
+        
+        .skill-item h5 {
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .skill-item h5 span {
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+        
+        .progress {
+            height: 12px;
+            border-radius: 10px;
+            background: #e9ecef;
+            overflow: visible;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary-color), #40b5d6);
+            border-radius: 10px;
+            position: relative;
+            overflow: visible;
+            animation: progressAnimation 2s ease;
+        }
+        
+        @keyframes progressAnimation {
+            from { width: 0; }
+        }
+        
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(37, 150, 190, 0.5);
+        }
+        
+        /* Portfolio Section */
+        #portfolio {
+            padding: 120px 0;
+            background: var(--white);
+        }
+        
+        .portfolio-filter {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 35px;
+            margin: 8px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(37, 150, 190, 0.3);
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            transition: all 0.5s ease;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 150, 190, 0.95), rgba(10, 10, 10, 0.95));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: all 0.5s ease;
+            padding: 30px;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .portfolio-overlay h4 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            transform: translateY(20px);
+            transition: transform 0.5s ease 0.1s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay h4 {
+            transform: translateY(0);
+        }
+        
+        .portfolio-overlay p {
+            color: var(--white);
+            margin-bottom: 20px;
+            transform: translateY(20px);
+            transition: transform 0.5s ease 0.2s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay p {
+            transform: translateY(0);
+        }
+        
+        .portfolio-overlay .btn-view {
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 10px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.3s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay .btn-view {
+            transform: translateY(0);
+        }
+        
+        .portfolio-overlay .btn-view:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+        
+        /* Testimonials Section */
+        #testimonials {
+            padding: 120px 0;
+            background: var(--gray);
+        }
+        
+        .testimonial-item {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .testimonial-item::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-size: 3rem;
+            color: var(--primary-color);
+            opacity: 0.1;
+        }
+        
+        .testimonial-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .testimonial-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            border: 5px solid var(--primary-color);
+            padding: 3px;
+            background: var(--white);
+        }
+        
+        .testimonial-item p {
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 2;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+        
+        .testimonial-item h5 {
+            color: var(--black);
+            margin-bottom: 5px;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-item span {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .testimonial-item .stars {
+            color: #ffd700;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+        
+        /* News Section */
+        #news {
+            padding: 120px 0;
+            background: var(--white);
+        }
+        
+        .news-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            margin-bottom: 30px;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .news-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .news-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .news-content {
+            padding: 35px;
+        }
+        
+        .news-meta {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .news-meta span i {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+        
+        .news-content h4 {
+            margin-bottom: 18px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            transition: color 0.3s ease;
+        }
+        
+        .news-card:hover .news-content h4 {
+            color: var(--primary-color);
+        }
+        
+        .news-content p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .read-more i {
+            margin-left: 8px;
+            transition: margin-left 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: var(--primary-dark);
+        }
+        
+        .read-more:hover i {
+            margin-left: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--black), var(--dark-gray));
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+        
+        .footer-content p {
+            color: #ccc;
+            margin-bottom: 35px;
+            font-size: 1.1rem;
+        }
+        
+        .social-links {
+            margin: 40px 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            border-radius: 50%;
+            line-height: 55px;
+            text-align: center;
+            margin: 0 12px;
+            transition: all 0.4s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-8px) rotate(360deg);
+            box-shadow: 0 10px 30px rgba(37, 150, 190, 0.4);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 35px;
+            margin-top: 50px;
+            color: #999;
+        }
+        
+        .copyright a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(37, 150, 190, 0.4);
+        }
+        
+        .scroll-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(37, 150, 190, 0.5);
+        }
+        
+        .scroll-top.show {
+            display: flex;
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .home-content h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .home-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .home-content .subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .btn-outline-custom {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+            
+            #about, #resume, #portfolio, #testimonials, #news {
+                padding: 80px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">SIAM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">News</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="home-content">
+                        <span class="greeting">👋 Hello, I'm</span>
+                        <h1>SP Siam <span>Ahmed</span></h1>
+                        <p class="subtitle">Full Stack Web Developer</p>
+                        <p>Crafting digital experiences with clean code and creative design. Transforming ideas into powerful web solutions that drive results and inspire users.</p>
+                        <div class="btn-group">
+                            <a href="#portfolio" class="btn-primary-custom">View Projects</a>
+                            <a href="#about" class="btn-outline-custom">Learn More</a>
+                        </div>
+                        <div class="social-links-home">
+                            <a href="www.facebook.com/spsiamahmed1111"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 data-text="About Me">About Me</h2>
+                <p>Discover my passion for creating exceptional web experiences</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4" data-aos="fade-right">
+                    <div class="about-img">
+                        <img src="spsiamahmed.png" alt="SP Siam Ahmed">
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="about-content">
+                        <h3>Full Stack Developer & Creative Problem Solver</h3>
+                        <p>I'm a passionate Full Stack Web Developer specializing in building exceptional digital experiences. With expertise spanning both front-end and back-end technologies, I transform complex challenges into elegant, user-friendly solutions.</p>
+                        <p>My approach combines technical excellence with creative innovation, ensuring every 
+                         not only meets requirements but exceeds expectations. I'm committed to writing clean, scalable code and staying at the forefront of emerging web technologies.</p>
+                        
+                        <div class="info-box">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="info-item">
+                                        <strong><i class="fas fa-user"></i> Name:</strong>
+                                        <span>SP Siam Ahmed</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <strong><i class="fas fa-envelope"></i> Email:</strong>
+                                        <span>spsiamahmed1111@gmail.com</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-item">
+                                        <strong><i class="fas fa-phone"></i> Phone:</strong>
+                                        <span>+880 1400661593</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <strong><i class="fas fa-map-marker-alt"></i> Location:</strong>
+                                        <span>Dhaka, Bangladesh</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <ul class="skills-list">
+                            <li><i class="fas fa-check-circle"></i> Full Stack Development</li>
+                            <li><i class="fas fa-check-circle"></i> Responsive Design</li>
+                            <li><i class="fas fa-check-circle"></i> API Development</li>
+                            <li><i class="fas fa-check-circle"></i> Database Architecture</li>
+                            <li><i class="fas fa-check-circle"></i> UI/UX Implementation</li>
+                            <li><i class="fas fa-check-circle"></i> Performance Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 data-text="Resume">My Resume</h2>
+                <p>My journey through education and professional experience</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="mb-4" data-aos="fade-right"><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="resume-item" data-aos="fade-up">
+                        <h4>Bachelor of Computer Science</h4>
+                        <h5><i class="far fa-calendar-alt"></i> 2018 - 2022</h5>
+                        <p>Graduated with honors, specializing in software engineering and web technologies. Developed strong foundations in algorithms, data structures, and modern development frameworks. Completed capstone project on full-stack web application development.</p>
+                    </div>
+                    <div class="resume-item" data-aos="fade-up" data-aos-delay="100">
+                        <h4>Full Stack Web Development Bootcamp</h4>
+                        <h5><i class="far fa-calendar-alt"></i> 2021</h5>
+                        <p>Intensive program covering HTML5, CSS3, JavaScript, React, Node.js, Express, and MongoDB. Built 10+ real-world projects demonstrating proficiency in modern web technologies and best practices.</p>
+                    </div>
+                    <div class="resume-item" data-aos="fade-up" data-aos-delay="200">
+                        <h4>Advanced JavaScript & Frameworks</h4>
+                        <h5><i class="far fa-calendar-alt"></i> 2020</h5>
+                        <p>Specialized certification in modern JavaScript frameworks including React, Vue.js, and Angular. Mastered component-based architecture and state management patterns.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4" data-aos="fade-left"><i class="fas fa-briefcase"></i> Experience</h3>
+                    <div class="resume-item" data-aos="fade-up">
+                        <h4>Senior Full Stack Developer</h4>
+                        <h5><i class="far fa-calendar-alt"></i> 2023 - Present</h5>
+                        <p>Leading development of enterprise-level web applications using React and Node.js. Architecting scalable backend systems, implementing RESTful APIs, and mentoring junior developers. Successfully delivered 15+ projects with 99.9% uptime.</p>
+                    </div>
+                    <div class="resume-item" data-aos="fade-up" data-aos-delay="100">
+                        <h4>Full Stack Web Developer</h4>
+                        <h5><i class="far fa-calendar-alt"></i> 2022 - 2023</h5>
+                        <p>Developed responsive websites and web applications for diverse clients across multiple industries. Collaborated with UX designers to implement pixel-perfect interfaces. Improved application performance by 40% through optimization techniques.</p>
+                    </div>
+                    <div class="resume-item" data-aos="fade-up" data-aos-delay="200">
+                        <h4>Junior Web Developer</h4>
+                        <h5><i class="far fa-calendar-alt"></i> 2021 - 2022</h5>
+                        <p>Assisted in building dynamic websites using HTML, CSS, JavaScript, and PHP. Maintained and updated existing codebases. Learned industry best practices for version control and agile development.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <h3 class="mb-4 text-center" data-aos="fade-up"><i class="fas fa-code"></i> Technical Skills</h3>
+                </div>
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="skill-item">
+                        <h5>HTML5 & CSS3 <span>95%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>JavaScript & jQuery <span>92%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>React & Next.js <span>88%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>Bootstrap & Tailwind <span>94%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 94%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="skill-item">
+                        <h5>Node.js & Express <span>90%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>PHP & Laravel <span>85%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>MySQL & PostgreSQL <span>89%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 89%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>MongoDB & Firebase <span>87%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 87%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 data-text="Portfolio">My Portfolio</h2>
+                <p>Explore my recent projects and creative work</p>
+            </div>
+            
+            <div class="portfolio-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="app">Web Apps</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web" data-aos="zoom-in">
+                    <img src="" alt="Project 1">
+                    <div class="portfolio-overlay">
+                        <h4>Corporate Website</h4>
+                        <p>Modern business website with elegant design and smooth animations</p>
+                        <a href="#" class="btn-view">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="app" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="" alt="Project 2">
+                    <div class="portfolio-overlay">
+                        <h4>Task Manager App</h4>
+                        <p>Full-stack productivity application with real-time updates</p>
+                        <a href="#" class="btn-view">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="ecommerce" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="" alt="Project 3">
+                    <div class="portfolio-overlay">
+                        <h4>E-commerce Platform</h4>
+                        <p>Complete online shopping solution with payment integration</p>
+                        <a href="#" class="btn-view">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web" data-aos="zoom-in">
+                    <img src="https://via.placeholder.com/400x300/2596be/ffffff?text=Portfolio+Site" alt="Project 4">
+                    <div class="portfolio-overlay">
+                        <h4>Creative Portfolio</h4>
+                        <p>Stunning portfolio website for creative professionals</p>
+                        <a href="#" class="btn-view">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="app" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://via.placeholder.com/400x300/2596be/ffffff?text=Social+Dashboard" alt="Project 5">
+                    <div class="portfolio-overlay">
+                        <h4>Social Media Dashboard</h4>
+                        <p>Analytics platform with data visualization and insights</p>
+                        <a href="#" class="btn-view">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://via.placeholder.com/400x300/2596be/ffffff?text=Restaurant+Site" alt="Project 6">
+                    <div class="portfolio-overlay">
+                        <h4>Restaurant Website</h4>
+                        <p>Elegant dining experience with online reservation system</p>
+                        <a href="#" class="btn-view">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 data-text="Testimonials">Client Testimonials</h2>
+                <p>What my clients say about working with me</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="testimonial-item">
+                        <img src="https://via.placeholder.com/90x90/2596be/ffffff?text=JD" alt="John Doe" class="testimonial-img">
+                        <p>"SP Siam Ahmed delivered an exceptional website that perfectly captured our brand vision. His technical expertise and attention to detail are truly outstanding. Highly recommended!"</p>
+                        <h5>John Doe</h5>
+                        <span>CEO, Tech Innovations</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-item">
+                        <img src="https://via.placeholder.com/90x90/2596be/ffffff?text=SM" alt="Sarah Miller" class="testimonial-img">
+                        <p>"Working with Siam was an absolute pleasure. He understood our requirements perfectly and delivered a robust, scalable application ahead of schedule. His professionalism is unmatched."</p>
+                        <h5>Sarah Miller</h5>
+                        <span>Marketing Director, Digital Plus</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-item">
+                        <img src="https://via.placeholder.com/90x90/2596be/ffffff?text=RK" alt="Robert Khan" class="testimonial-img">
+                        <p>"The e-commerce platform Siam built has significantly boosted our online sales. His innovative solutions and responsive communication made the entire process seamless."</p>
+                        <h5>Robert Khan</h5>
+                        <span>Founder, Shop Excellence</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 data-text="News">Latest News & Updates</h2>
+                <p>Stay updated with my recent articles and industry insights</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="news-card">
+                        <img src="https://via.placeholder.com/400x280/2596be/ffffff?text=Web+Development+2024" alt="News 1">
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span><i class="far fa-calendar"></i> September 25, 2024</span>
+                                <span><i class="far fa-user"></i> SP Siam</span>
+                            </div>
+                            <h4>The Future of Web Development in 2024</h4>
+                            <p>Exploring emerging trends and technologies that are shaping the future of web development, including AI integration and advanced frameworks.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="news-card">
+                        <img src="https://via.placeholder.com/400x280/2596be/ffffff?text=React+Best+Practices" alt="News 2">
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span><i class="far fa-calendar"></i> September 20, 2024</span>
+                                <span><i class="far fa-user"></i> SP Siam</span>
+                            </div>
+                            <h4>React Best Practices for Scalable Apps</h4>
+                            <p>A comprehensive guide to building maintainable and scalable React applications using modern patterns and performance optimization techniques.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="news-card">
+                        <img src="https://via.placeholder.com/400x280/2596be/ffffff?text=UI+UX+Design" alt="News 3">
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span><i class="far fa-calendar"></i> September 15, 2024</span>
+                                <span><i class="far fa-user"></i> SP Siam</span>
+                            </div>
+                            <h4>Mastering Modern UI/UX Design Principles</h4>
+                            <p>Learn how to create intuitive and engaging user interfaces that enhance user experience and drive conversions for your web applications.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>SP Siam Ahmed</h3>
+                <p>Let's create something amazing together!</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2024 <a href="www.facebook.com/spsiamahmed1111">SP Siam Ahmed</a>. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #2596be;"></i> by SP Siam Ahmed</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Navbar scroll effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+            
+            // Scroll to top button
+            if ($(this).scrollTop() > 300) {
+                $('.scroll-top').addClass('show');
+            } else {
+                $('.scroll-top').removeClass('show');
+            }
+        });
+        
+        // Smooth scrolling for nav links
+        $('.nav-link, .btn-primary-custom, .btn-outline-custom').click(function(e) {
+            if (this.hash !== '') {
+                e.preventDefault();
+                const hash = this.hash;
+                
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top - 70
+                }, 800);
+                
+                // Update active nav link
+                $('.nav-link').removeClass('active');
+                $(this).addClass('active');
+                
+                // Close mobile menu
+                $('.navbar-collapse').collapse('hide');
+            }
+        });
+        
+        // Scroll to top
+        $('.scroll-top').click(function() {
+            $('html, body').animate({scrollTop: 0}, 800);
+        });
+        
+        // Portfolio filter
+        $('.filter-btn').click(function() {
+            $('.filter-btn').removeClass('active');
+            $(this).addClass('active');
+            
+            const filter = $(this).data('filter');
+            
+            if (filter === 'all') {
+                $('.portfolio-item').fadeIn(400);
+            } else {
+                $('.portfolio-item').fadeOut(400);
+                $('.portfolio-item[data-category="' + filter + '"]').fadeIn(400);
+            }
+        });
+        
+        // Active nav on scroll
+        $(window).scroll(function() {
+            const scrollPos = $(window).scrollTop() + 100;
+            
+            $('section').each(function() {
+                const currSection = $(this);
+                const sectionTop = currSection.offset().top;
+                const sectionHeight = currSection.outerHeight();
+                const sectionId = currSection.attr('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    $('.nav-link').removeClass('active');
+                    $('.nav-link[href="#' + sectionId + '"]').addClass('active');
+                }
+            });
+        });
+    </script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "SP Siam Ahmed",
+    "url": "https://spsiamahmed.github.io/portfolio/",
+    "image": "https://spsiamahmed.github.io/portfolio/your-image.jpg",
+    "sameAs": [
+    "https://www.facebook.com/spsiamahmed1111",
+    "https://www.instagram.com/spsiamahmed111",
+    "https://www.linkedin.com/in/sp-siam-ahmed-61412a333/"
+    ],
+    "jobTitle": "Web Developer & Designer",
+    "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance / Self-Employed"
+    },
+    "description": "SP Siam Ahmed is a passionate Web Developer, Designer & SEO Expert from Bangladesh. Skilled in HTML, CSS, JavaScript, WordPress & Digital Marketing."
+    }
+    </script>
+    
+</body>
+</html> Skilled in HTML, CSS, JavaScript, WordPress & Digital Marketing."
+    }
+    </script>
+    
+</body>
+</html>
+</html>
