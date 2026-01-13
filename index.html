@@ -1492,16 +1492,7 @@
                 $('.portfolio-item[data-category="' + filter + '"]').fadeIn(400);
      
         });
-        // Auto footer date
-$(document).ready(function () {
-    const today = new Date();
-    const day = today.getDate();
-    const month = today.getMonth() + 1;
-    const year = today.getFullYear();
-
-    $('#currentDate').text(day + '-' + month + '-' + year);
-});
-        
+ 
         
         // Active nav on scroll
         $(window).scroll(function() {
@@ -1520,6 +1511,18 @@ $(document).ready(function () {
             });
         });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const today = new Date();
+    const day = today.getDate();
+    const month = today.getMonth() + 1;
+    const year = today.getFullYear();
+
+    document.getElementById("currentDate").innerText =
+        day + "-" + month + "-" + year;
+});
+    </script>
+    
     <script type="application/ld+json">
     {
     "@context": "https://schema.org",
