@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="SP Siam Ahmed is a passionate Web Developer & Designer from Bangladesh. Specializing in HTML, CSS, JavaScript, WordPress & SEO. Explore portfolio, projects, and services.">
+  
+    <meta name="description" content="Official portfolio website of Sp Siam Ahmed, web developer. Projects, skills and contact information.">
     <meta name="keywords" content="SP Siam Ahmed, Web Developer Bangladesh, Web Designer, SEO Expert, WordPress Developer, Portfolio Website, Frontend Developer, HTML CSS JavaScript">
     <meta property="og:title" content="SP Siam Ahmed | Web Developer & SEO Expert">
     <meta property="og:description" content="Professional Web Developer & Designer from Bangladesh. Explore portfolio, projects, and digital services.">
     <meta property="og:image" content="https://spsiamahmed.github.io/portfolio/logo.jpg">
-    <meta property="og:url" content="https://spsiamahmed.github.io/portfolio/">
+    <meta property="og:url" content="https://spsiamahmed.github.io/main">
     <meta property="og:type" content="website">
     <meta name="google-site-verification" content="u0SIe1qPYIBpdEY5tf1fp_2diX080VaB80RKxNC7gvc" />
     <link rel="shortcut icon" href="logo.jpg" type="x-icon">
 <link rel="icon" href="logo.jpg" type="x-icon">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SP Siam Ahmed | Web Developer, Designer & SEO Expert from Bangladesh</title>
     
+    <title>Sp Siam Ahmed | Official Web Developer Portfolio</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -1006,7 +1007,9 @@
             </div>
         </div>
     </nav>
-
+<section style="padding:20px; text-align:center;">
+  <p><strong>This is the official portfolio website of Sp Siam Ahmed.</strong></p>
+</section>
     <!-- Home Section -->
     <section id="home">
         <div class="container">
@@ -1401,7 +1404,15 @@
                 </div>
                 
                 <div class="copyright">
-                    <p>&copy 2026; <a href="www.facebook.com/spsiamahmed1111">SP Siam Ahmed</a>. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #2596be;"></i> by SP Siam Ahmed</p>
+                    
+                    <p>
+    &copy; <span id="currentDate"></span>
+    <a href="https://www.facebook.com/spsiamahmed1111">SP Siam Ahmed</a>.
+    Official Website. All Rights Reserved. |
+    Designed with <i class="fas fa-heart" style="color: #2596be;"></i>
+    by SP Siam Ahmed
+                    </p>
+                    
                 </div>
             </div>
         </div>
@@ -1479,8 +1490,18 @@
             } else {
                 $('.portfolio-item').fadeOut(400);
                 $('.portfolio-item[data-category="' + filter + '"]').fadeIn(400);
-            }
+     
         });
+        // Auto footer date
+$(document).ready(function () {
+    const today = new Date();
+    const day = today.getDate();
+    const month = today.getMonth() + 1;
+    const year = today.getFullYear();
+
+    $('#currentDate').text(day + '-' + month + '-' + year);
+});
+        
         
         // Active nav on scroll
         $(window).scroll(function() {
@@ -1504,7 +1525,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "SP Siam Ahmed",
-    "url": "https://spsiamahmed.github.io/portfolio/",
+    "url": "https://spsiamahmed.github.io/portfolio",
     "image": "https://spsiamahmed.github.io/portfolio/your-image.jpg",
     "sameAs": [
     "https://www.facebook.com/spsiamahmed1111",
@@ -1518,13 +1539,12 @@
     },
     "description": "SP Siam Ahmed is a passionate Web Developer, Designer & SEO Expert from Bangladesh. Skilled in HTML, CSS, JavaScript, WordPress & Digital Marketing."
     }
-    </script>
     
-</body>
-</html> Skilled in HTML, CSS, JavaScript, WordPress & Digital Marketing."
+    
+Skilled in HTML, CSS, JavaScript, WordPress & Digital Marketing."
     }
     </script>
     
 </body>
-</html>
+
 </html>
