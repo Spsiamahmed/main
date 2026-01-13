@@ -1388,34 +1388,35 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h3>SP Siam Ahmed</h3>
-                <p>Let's create something amazing together!</p>
-                
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-dribbble"></i></a>
-                </div>
-                
-                <div class="copyright">
-                    
-                    <p>
-    &copy; <span id="currentDate"></span>
-    <a href="https://www.facebook.com/spsiamahmed1111">SP Siam Ahmed</a>.
-    Official Website. All Rights Reserved. |
-    Designed with <i class="fas fa-heart" style="color: #2596be;"></i>
-    by SP Siam Ahmed
-                    </p>
-                    
-                </div>
+    <footer>  
+    <div class="container">  
+        <div class="footer-content">  
+            <h3>SP Siam Ahmed</h3>  
+            <p>Let's create something amazing together!</p>  
+            <div class="social-links">  
+                <a href="#"><i class="fab fa-facebook-f"></i></a>  
+                <a href="#"><i class="fab fa-twitter"></i></a>  
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>  
+                <a href="#"><i class="fab fa-github"></i></a>  
+                <a href="#"><i class="fab fa-instagram"></i></a>  
+                <a href="#"><i class="fab fa-dribbble"></i></a>  
+            </div>  
+            
+            <!-- স্বয়ংক্রিয় তারিখ ও সময় ডিসপ্লে -->
+            <div class="live-datetime" id="liveDateTime">
+                <!-- JavaScript দিয়ে এটা আপডেট হবে -->
             </div>
-        </div>
+              
+            <div class="copyright">  
+                <p>
+                    <span id="autoCopyright">© 2026</span>; 
+                    <a href="www.facebook.com/spsiamahmed1111">SP Siam Ahmed</a>. 
+                    All Rights Reserved. | 
+                    Designed with <i class="fas fa-heart" style="color: #2596be;"></i> by SP Siam Ahmed
+                </p>  
+            </div>  
+        </div>  
+    </div>  
     </footer>
 
     <!-- Scroll to top button -->
@@ -1510,18 +1511,50 @@
                 }
             });
         });
-    </script>
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const today = new Date();
-    const day = today.getDate();
-    const month = today.getMonth() + 1;
-    const year = today.getFullYear();
 
-    document.getElementById("currentDate").innerText =
-        day + "-" + month + "-" + year;
+        <!-- JavaScript for auto-updating date and time -->
+<script>
+// তারিখ ও সময় আপডেট করার ফাংশন
+function updateDateTime() {
+    const now = new Date();
+    
+    // তারিখ ফরম্যাট (dd-mm-yyyy)
+    const day = now.getDate().toString().padStart(2, '0');
+    const month = (now.getMonth() + 1).toString().padStart(2, '0');
+    const year = now.getFullYear();
+    
+    // সময় ফরম্যাট (hh:mm:ss AM/PM)
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    
+    // 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours.toString().padStart(2, '0') : '12';
+    
+    const dateStr = `${day}-${month}-${year}`;
+    const timeStr = `${hours}:${minutes}:${seconds} ${ampm}`;
+    
+    // লাইভ তারিখ-সময় ডিসপ্লে আপডেট
+    if(document.getElementById('liveDateTime')) {
+        document.getElementById('liveDateTime').innerHTML = 
+            `<span style="color: #2596be; font-weight: bold;">© ${dateStr} | ${timeStr}</span>`;
+    }
+    
+    // কপিরাইট বছর আপডেট
+    if(document.getElementById('autoCopyright')) {
+        document.getElementById('autoCopyright').textContent = `© ${dateStr}`;
+    }
+}
+
+// পেজ লোড হওয়ার সাথে সাথে আপডেট
+document.addEventListener('DOMContentLoaded', function() {
+    updateDateTime();
+    // প্রতি সেকেন্ডে আপডেট
+    setInterval(updateDateTime, 1000);
 });
-    </script>
+</script>
     
     <script type="application/ld+json">
     {
@@ -1543,9 +1576,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "description": "SP Siam Ahmed is a passionate Web Developer, Designer & SEO Expert from Bangladesh. Skilled in HTML, CSS, JavaScript, WordPress & Digital Marketing."
     }
     
-    
-Skilled in HTML, CSS, JavaScript, WordPress & Digital Marketing."
-    }
+
     </script>
     
 </body>
